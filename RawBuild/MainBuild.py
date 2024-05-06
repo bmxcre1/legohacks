@@ -1,11 +1,11 @@
 import os
-import psutil
 import pymem
-import time
 import re
 import glob
 import GetDM
 import VerifyRoblox
+import MemoryAPI
+import time
 
 # GENERAL FUNCTIONS
 
@@ -44,26 +44,16 @@ def valid_pointer(pm, address, is64Bit):
 
 def pattern_scan_all(pm, hex_array, xreturn_multiple=False):
     return pymem.pattern.pattern_scan_all(pm.process_handle, plat(hex_array), return_multiple=xreturn_multiple)
+ 
+# VERIFY ROBLOX
+print("Verifying Roblox")
+Roblox,pm,Bloxstrap,Version = VerifyRoblox.Verify()
+if not Roblox or not Bloxstrap or not Version:
+    print("Failed Roblox Validation")
+    exit()
+else:
+    print("Roblox Validated")
 
-# PROCESS CHECK
-
-
-def get_latest_log_file(logs_folder):
-    log_files = glob.glob(os.path.join(logs_folder, '*.log'))
-    if not log_files:
-        return None
-    latest_log_file = max(log_files, key=os.path.getmtime)
-    return latest_log_file
-
-def scan_datamodel(log_file):
-    pattern = re.compile(r'dataModel\(([0-9a-fA-F]+)\)')
-    memory_addresses = []
-    with open(log_file, 'r', encoding='utf-8') as file:
-        for line in file:
-            match = pattern.search(line)
-            if match:
-                memory_addresses.append(match.group(1))
-    return memory_addresses
 
 # FETCH DATAMODEL
 print("Fetching DataModel...")
@@ -73,16 +63,8 @@ if DataModel != False:
 else:
     exit()
 
-Roblox,pm,Bloxstrap,Version = VerifyRoblox.Verify()
-if not Roblox or not Bloxstrap or not Version:
-    print("Failed Roblox Validation")
-    exit()
-else:
-    print("Roblox Validated")
 
-# LOGS CHECK
-roblox_path = os.path.join(os.getenv('LOCALAPPDATA'), 'Roblox')
-logs_folder = os.path.join(roblox_path, 'Logs')
+time.sleep(2)
 
 
 
