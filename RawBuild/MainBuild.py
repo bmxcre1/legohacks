@@ -75,6 +75,7 @@ else:
 
 Roblox,pm,Bloxstrap,Version = VerifyRoblox.Verify()
 if not Roblox or not Bloxstrap or not Version:
+    print("Failed Roblox Validation")
     exit()
 else:
     print("Roblox Validated")
