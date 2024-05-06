@@ -50,7 +50,7 @@ print("Verifying Roblox")
 Roblox,pm,Bloxstrap,Version = VerifyRoblox.Verify()
 if not Roblox or not Bloxstrap or not Version:
     print("Failed Roblox Validation")
-    exit()
+    exit(2)
 else:
     print("Roblox Validated")
 
@@ -62,8 +62,7 @@ DataModel = GetDM.GetDataModel()
 if DataModel != False:
     print("Fetched DataModel")
 else:
-    exit()
-
+    exit(2)
 
 time.sleep(5)
 
