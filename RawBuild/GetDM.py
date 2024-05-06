@@ -39,4 +39,5 @@ def GetDataModel():
         print("Error fetching DataModel ERR:03")
         return False
 
+    
     return datamodel_addresses[0]
