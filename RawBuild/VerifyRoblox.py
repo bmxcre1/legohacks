@@ -19,9 +19,9 @@ def Verify():
 
     if not process_found:
         print("Please run Roblox before injecting")
-
-    print('Found RobloxPlayerBeta.exe')
-    roblox = True
+    else:
+        print('Found RobloxPlayerBeta.exe')
+        roblox = True
     time.sleep(0.7)
 
     # BLOXSTRAP CHECK

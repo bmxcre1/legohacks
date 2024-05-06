@@ -54,6 +54,7 @@ if not Roblox or not Bloxstrap or not Version:
 else:
     print("Roblox Validated")
 
+  
 
 # FETCH DATAMODEL
 print("Fetching DataModel...")
@@ -64,7 +65,7 @@ else:
     exit()
 
 
-time.sleep(2)
+time.sleep(5)
 
 
 
