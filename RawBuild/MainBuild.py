@@ -54,13 +54,12 @@ if not Roblox or not Bloxstrap or not Version:
 else:
     print("Roblox Validated")
 
-  
-
 # FETCH DATAMODEL
 print("Fetching DataModel...")
 DataModel = GetDM.GetDataModel()
 if DataModel != False:
     print("Fetched DataModel")
+    print(DataModel)
 else:
     exit(2)
 

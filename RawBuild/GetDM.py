@@ -1,4 +1,3 @@
-# GETDATAMODEL
 import os
 import glob
 import re
@@ -40,3 +39,5 @@ def GetDataModel():
         return False
 
     return datamodel_addresses[0]
+
+
