@@ -2,7 +2,7 @@
 import os
 import glob
 import re
-import yes
+
 def GetDataModel():
 
     def get_latest_log_file(logs_folder):

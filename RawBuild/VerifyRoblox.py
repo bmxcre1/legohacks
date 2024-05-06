@@ -4,7 +4,6 @@ import pymem
 import os
 import time
 
-
 def Verify():
     bs_version = 'version-7d64f40489634ca5'
     bloxstrap = False
