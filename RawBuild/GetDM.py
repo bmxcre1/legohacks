@@ -1,9 +1,7 @@
 import os
 import glob
 import re
-
 def GetDataModel():
-
     def get_latest_log_file(logs_folder):
         log_files = glob.glob(os.path.join(logs_folder, '*.log'))
         if not log_files:
@@ -32,12 +30,10 @@ def GetDataModel():
     if latest_log_file is None:
         print("Error fetching DataModel ERR:02")
         return False
-
     datamodel_addresses = scan_datamodel(latest_log_file)
     if not datamodel_addresses:
         print("Error fetching DataModel ERR:03")
         return False
-
     return datamodel_addresses[0]
 
 
